@@ -1,0 +1,12 @@
+#bigContainer {
+    margin: 2px 2px 5px  ;
+    font-family: 'Times Roman New Ariel Calibri ' ;
+    font-style: bold;
+    flex: content;
+    background-color: black;
+}
+
+#bigContainer > * {
+    padding: 2px 2px  ;
+    margin: 2px 2px 2px  ;
+}

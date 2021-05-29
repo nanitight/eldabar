@@ -1,0 +1,19 @@
+
+.welcome {
+    color: red ;
+    font-size: 30px;
+}  
+
+
+#VideoPlayer {
+    width: 560px;
+    border: 12px double red ;
+    background-color: #001f5f ;
+    color:white;
+    padding: 5px ;
+}
+
+#points{
+    position: static;
+}
+ 
