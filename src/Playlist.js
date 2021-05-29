@@ -26,7 +26,7 @@ class Playlist extends React.Component {
             }
         ],
             title: title,
-            userName: 'PlaceHolder1'
+            userName: 'PlaceHolder1' //props.userName
         }
     }
     componentWillMount(){
