@@ -28,6 +28,7 @@ class App extends React.Component {
   render(){
     return (
       <Router>
+        <Switch>
         <Route path="/about" 
         render={ renderProps => (
           <div>
@@ -53,6 +54,7 @@ class App extends React.Component {
             </div>
           )} />
           {/* <Route path="/contact" component = {Contact}/>  */}
+          </Switch>
       </Router>
     )
   }

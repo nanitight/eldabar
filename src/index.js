@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 // import EDCC from './Edcc' ;
 // import Log from './login' ;
-// import Play from './Playlist' ;
+import Play from './Playlist' ;
 // import NavBar from './Edcc' ;
 
 import reportWebVitals from './reportWebVitals';
@@ -12,9 +12,9 @@ import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-     <App />
+     {/* <App /> */}
     {/* <NavBar />  */}
-    {/* <Play/>    */}
+    <Play/>   
   </React.StrictMode>,
   // el,
   
