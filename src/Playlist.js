@@ -1,7 +1,7 @@
 import React from 'react';
 import VideoPlayer from './VideoPlayer'
-import './Playlist.css'
-var title = "Living A Life Free From Demonic Oppression" ; 
+import './Playlist.css' ;
+import axios from 'axios' ;
 
 //The class for the playlist, it must atleast have one video. 
 class Playlist extends React.Component {
@@ -12,31 +12,40 @@ class Playlist extends React.Component {
         this.state = {
             currVidIndex : 0 ,
             vidsArray: [ // we are supposed to receive the videos details from user input. we will work on that ..
-            {   title:title ,
-                source: "https://www.facebook.com/plugins/video.php?height=415&href=https%3A%2F%2Fwww.facebook.com%2F137622389779783%2Fvideos%2F310221190308898%2F&show_text=true&width=560" ,
-                scroll:"no",
-                width:"560",
-                height:"530"} ,
-            //,next
-            {   title: "VideoPlayer",
-                source:"https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2F137622389779783%2Fvideos%2F1798424190305663%2F&show_text=false&width=560",
-                width:"560" ,
-                height:"560" ,
-                scrolling :"no" 
-            }
         ],
-            title: title,
             userName: 'PlaceHolder1' //props.userName
         }
     }
-    componentWillMount(){
-        alert('retriving old value') ;
-        let index = localStorage.getItem("CurrVidIndex") ;
-        if (!index===null){ //index is not equal to null
-            this.setState({
-                currVidIndex:index
-            })
-        }
+    getAllVideos= () =>{
+        axios.get('http://localhost:9009/edcc/videos')
+        // .then(res=>res.json())
+        .then((res)=>{
+            console.log('Backend',res) ;
+            const responseData = res.data ; 
+
+            if (responseData.data !== undefined){
+                this.setState({
+                    vidsArray:responseData.data
+                },()=>{console.log('updating state')}) ;
+            }
+        })
+        .catch(err=>console.log('Error in comms',err))
+
+    }
+    componentDidMount(){
+        // alert('retriving old value') ;
+        // let index = localStorage.getItem("CurrVidIndex") ;
+        // if (!index===null){ //index is not equal to null
+        //     this.setState({
+        //         currVidIndex:index
+        //     }) ;
+        // }
+        // else{
+        //     this.setState({
+        //         currVidIndex:0
+        //     }) ;
+        // }
+       this.getAllVideos() ;
     }
     componentWillUnmount(){
         // when app unmonts it must store the current index video. If the playlist has one vid, index is 0 , 
@@ -52,12 +61,12 @@ class Playlist extends React.Component {
         }
     }
 
-    componentDidUpdate(){
-        alert('update') ; //debug  step
-        if (0 < this.state.currVidIndex){ //check if i went back in the viewes list
-            localStorage.setItem("CurrVidIndex",this.state.currVidIndex) ; 
-        }
-    }
+    // componentDidUpdate(){
+    //     alert('update') ; //debug  step
+    //     if (0 < this.state.currVidIndex){ //check if i went back in the viewes list
+    //         localStorage.setItem("CurrVidIndex",this.state.currVidIndex) ; 
+    //     }
+    // }
 
     nextVideo =()=>{
         alert('pressed NExt') //debug  step
@@ -97,20 +106,32 @@ class Playlist extends React.Component {
         }
     }
 
+    playSelectedVideo = (num)=>{
+        this.setState({
+            currVidIndex:num
+        }) ;
+    }
+
     render(){
         // this.state.currVidIndex
-        const  video = this.state.vidsArray[this.state.currVidIndex]  ; //object that represents the video
+        var  video = this.state.vidsArray[this.state.currVidIndex]  ; //object that represents the video
+        console.log('video displayed',this.state) ;
         return (
             <div  id="bigContainer">
                 <VideoPlayer 
-                userName={this.state.userName} 
-                vidURL={video}
+                vidURL={video===undefined?{}:video}
                 nextVideo={this.nextVideo}
                 prevVideo={this.prevVideo}
                 />
-            
-                <button onClick={this.prevVideo}>Previous Video</button>
-                <button onClick={this.nextVideo} >Next Video</button>
+                <div>
+                    <p>Playlist:{'?'}</p>
+                    {this.state.vidsArray.map((vid,index)=>{
+                        return <span>
+                            <button className="click-btn"
+                            onClick={()=>this.playSelectedVideo(index)}>
+                                {vid.title}</button><br/></span>
+                    })}
+            </div>
             </div>
             )
     }

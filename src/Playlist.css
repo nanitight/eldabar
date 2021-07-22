@@ -2,8 +2,11 @@
     margin: 2px 2px 5px  ;
     font-family: 'Times Roman New Ariel Calibri ' ;
     font-style: bold;
-    flex: content;
-    background-color: black;
+    /* background-color: black; */
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
 }
 
 #bigContainer > * {

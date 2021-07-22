@@ -1,19 +1,33 @@
-
-.welcome {
+.title {
     color: red ;
     font-size: 30px;
 }  
 
 
 #VideoPlayer {
-    width: 560px;
-    border: 12px double red ;
-    background-color: #001f5f ;
-    color:white;
+    /* width: 560px; */
+    /* border: 12px double red ; */
+    /* background-color: #001f5f ; */
+    /* color:white; */
     padding: 5px ;
 }
 
-#points{
-    position: static;
+.vidContainer{
+    border: none;
+    max-height: 45vh;
+    max-width: 80vw;
+    overflow-y: scroll;
 }
+
+.click-btn:hover{
+    cursor: pointer;
+    background-color: #965b00;
+}
+.click-btn{
+    border-radius: 20px ;
+    background-color: rgba(150, 75, 0, 0.972);
+    color: black ;
+    font-size: medium;
+}
+
  

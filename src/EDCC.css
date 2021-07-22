@@ -1,9 +1,83 @@
-nav > *{
-    display: inline;
+.nav-container{
+    /* position: absolute; */
+    top: 0;
+    background-color: aliceblue;
 }
 
-.NavElem{
-    border: solid blue 1px;
-    margin: 2px;
-    margin-top: 1px;
+.nav-container img{
+    width: auto;
+    height: 10vh;
+} 
+
+
+
+.nav-list{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 60vw;
+
+}
+
+.nav-list a{
+    text-decoration : none ;
+}
+
+.nav-list a:hover{
+    color: blue;
+}
+.content{	
+    background-color: rgba(120,200,225,0.3);
+	min-height: 75vh ;
+
+}
+
+#section {
+	/* max-width: 49% ; */
+    height: 77vh;
+	overflow-y: scroll;
+    display:block;
+	color: black ;
+	text-align: left;
+	font-family: Georgia ,fantasy ,Arial;
+	font-size: 30px;
+}
+
+
+#footer{
+	max-height: 13vh ;
+	position: fixed;
+	background-color: rgba(120,200,225,0.7);
+	width: 100% ;
+	text-align: center; 
+	/* bottom: 0% ; */
+	/* right: 5px ; */
+	/* left: 1% ; */
+}
+
+#slogan{ 
+	font-family: fantasy,"Times New Roman","Arial Bold" ;
+	font-size: small;
+	color: Black ;
+	text-shadow: 5px 10px 3px #93698f ;
+
+	animation-name: sloganmove ;
+	animation-duration: 30s ;
+	animation-timing-function:ease-in-out ;
+	animation-delay: 1s ;
+	animation-iteration-count: infinite;
+}
+
+@keyframes sloganmove{
+	0% {
+		text-align: left;
+	}
+	50% {
+		text-align: center;
+	}
+	100%{
+		text-align: right;
+	}
 }
