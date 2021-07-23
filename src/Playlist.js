@@ -136,14 +136,15 @@ class Playlist extends React.Component {
                             </span> 
                            Playlist:{'?'}
                         </p>
+                        <div>
                         {this.state.vidsArray.length > 0 ?
                         this.state.vidsArray.map((vid,index)=>{
-                            return <span>
-                                <button className="click-btn"
+                            return <button className="click-btn" key={`k${index}`}
                                 onClick={()=>this.playSelectedVideo(index)}>
-                                    {vid.title}</button><br/></span>
+                                    {vid.title}</button>
                         }):
                         <p>No Videos Selected</p>}
+                        </div>
                 </div>
                 </div>
                 )

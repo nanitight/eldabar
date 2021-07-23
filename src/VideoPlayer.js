@@ -25,12 +25,11 @@ class LatestVideo extends React.Component{
                 // width={vidWidth} 
                 // height={vidHeight} 
                 allowFullScreen={true} allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" 
-                
                 />      
-                <br/>
-                <button className="click-btn" onClick={this.props.prevVideo}>Previous Video</button>
-                <button className="click-btn" onClick={this.props.nextVideo} >Next Video</button>
-           
+                <div>
+                    <button className="click-btn" onClick={this.props.prevVideo}>Previous Video</button>
+                    <button className="click-btn" onClick={this.props.nextVideo} >Next Video</button>
+                </div>
         </div> )
     }
 }

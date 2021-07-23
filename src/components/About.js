@@ -2,11 +2,23 @@ import React from  'react' ;
 function About(){
     function openClose(){
         var btn = document.getElementById('more');
-        btn.style.display = 'none' ;
-        var par = document.getElementById('more-txt').style.display = 'block' ;
+        if (btn.innerHTML === 'More...'){
+            btn.innerHTML = 'Less..' ;
+            var par = document.getElementById('more-txt');
+            par.style.display = 'block' ;
+        }
+        else{
+            closeOpen() ;
+        }
+    }
+    function closeOpen(){
+        var btn = document.getElementById('more');
+        btn.innerHTML = 'More...' ;
+        var par = document.getElementById('more-txt');
+        par.style.display = 'none' ;
     }
     return(<div id="section">
-    <p class="v1">
+    <p className="v1">
         <u>Vision:</u> Setting the captives free and instructing the freed for life of liberty and abundance in Christ Jesus
     </p>
 
