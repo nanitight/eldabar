@@ -1,9 +1,25 @@
-.nav-container{
-    /* position: absolute; */
-    top: 0;
-    background-color: aliceblue;
-}
+/* =================================NAVIGATOR================================= */
+/* @media(max-width:699px) { 
 
+	.nav-container{
+		display: flex;
+	}
+} */
+
+#root{
+	width: 100vw;
+	height: 100vh;
+}
+.nav-container{
+	background-color: aliceblue;
+	
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+}
 .nav-container img{
     width: auto;
     height: 10vh;
@@ -11,13 +27,11 @@
 
 
 
+
 .nav-list{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    flex-direction: row;
-    flex-wrap: wrap;
     width: 60vw;
+	display: inline-flex;
+	justify-content: space-between;
 
 }
 
@@ -28,11 +42,17 @@
 .nav-list a:hover{
     color: blue;
 }
-.content{	
-    background-color: rgba(120,200,225,0.3);
-	min-height: 75vh ;
 
+
+
+/* =================================CONTENT================================= */
+
+.content{	
+	background-color: rgba(120,200,225,0.3);
 }
+
+
+/* =================================ABOUT================================= */
 
 #section {
 	/* max-width: 49% ; */
@@ -45,6 +65,8 @@
 	font-size: 30px;
 }
 
+/* =================================FOOTER================================= */
+
 
 #footer{
 	max-height: 13vh ;
@@ -52,7 +74,7 @@
 	background-color: rgba(120,200,225,0.7);
 	width: 100% ;
 	text-align: center; 
-	/* bottom: 0% ; */
+	/* top: -80% ; */
 	/* right: 5px ; */
 	/* left: 1% ; */
 }

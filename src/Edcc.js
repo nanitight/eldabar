@@ -8,6 +8,7 @@ class EDCCNavBar extends React.Component{
     constructor(props){
         super(props) ;
         this.url = 'http://localhost:9009' ;
+        // this.url= 'https://nd1server1.herokuapp.com'
         // this.state = {
         //     videos:[]
         // }
@@ -50,13 +51,13 @@ class EDCCNavBar extends React.Component{
         return(
             <Router>
                 <div className="nav-container">
+                    <img id="logo" src={`${this.url}/artist/edcc/logosquare.jpg`} alt="logo"/>
+
                     <div className="nav-list">
-                        <img src={`${this.url}/artist/edcc/justlogo.png`} alt="logo"/>
                         <Link to="/">HOME</Link>
                         <Link to="/about">About Us</Link>
                         <Link to="/contact">Contact Us</Link>
                     </div>
-                    {/* <Playlist /> */}
                 </div>
                 <div className="content">
                 <Switch>
@@ -66,11 +67,10 @@ class EDCCNavBar extends React.Component{
                 </Switch>
                 </div>
                 <div id="footer">
-                <p id="slogan">
-                    Empowering People To Impact The World
-                </p>
-                <br/>
-                    Copyright 2019-2021
+                    <p id="slogan">
+                        Empowering People To Impact The World
+                    </p>
+                        Copyright 2019-2021
                 </div>
             </Router>
         )
