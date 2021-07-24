@@ -1,0 +1,116 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+Array [
+  <div
+    className="nav-container"
+    data-testid="nav"
+  >
+    <img
+      alt="logo"
+      id="logo"
+      src="https://nd1server1.herokuapp.com/artist/edcc/logosquare.jpg"
+    />
+    <div
+      className="nav-list"
+    >
+      <a
+        href="/"
+        onClick={[Function]}
+      >
+        HOME 
+      </a>
+      <a
+        href="/about"
+        onClick={[Function]}
+      >
+        About Us 
+      </a>
+      <a
+        href="/contact"
+        onClick={[Function]}
+      >
+        Contact Us 
+      </a>
+    </div>
+    <a
+      className="click-btn title"
+      href="/add"
+      onClick={[Function]}
+    >
+      + 
+    </a>
+  </div>,
+  <div
+    className="content"
+    data-testid="content"
+  >
+    <div
+      data-testid="playlist-content"
+      id="bigContainer"
+    >
+      <div
+        id="VideoPlayer"
+      >
+        <p
+          className="title"
+        >
+          EL-Dabar : The Word Of God
+        </p>
+        <iframe
+          allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+          allowFullScreen={true}
+          className="vidContainer"
+          src=""
+          title="EL-Dabar : The Word Of God"
+        />
+        <div>
+          <button
+            className="click-btn"
+            onClick={[Function]}
+          >
+            Previous Video
+          </button>
+          <button
+            className="click-btn"
+            onClick={[Function]}
+          >
+            Next Video
+          </button>
+        </div>
+      </div>
+      <div
+        className="Playlist Manager"
+        data-testid="playlist-manager"
+      >
+        <p
+          className="title"
+        >
+          <span
+            className="click-btn"
+          >
+            ☰
+          </span>
+          EL-DABAR : THE WORD OF GOD
+        </p>
+        <div>
+          <p>
+            No Videos Selected
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>,
+  <div
+    data-testid="footer"
+    id="footer"
+  >
+    <p
+      id="slogan"
+    >
+      Empowering People To Impact The World
+    </p>
+    Copyright 2019-2021
+  </div>,
+]
+`;

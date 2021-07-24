@@ -121,13 +121,13 @@ class Playlist extends React.Component {
             var  video = storedVids[this.state.currVidIndex ] ; //object that represents the video
             // console.log('video displayed',this.state) ;
             return (
-                <div  id="bigContainer">
+                <div  id="bigContainer" data-testid="playlist-content">
                     <VideoPlayer 
                     vidURL={video===undefined?{}:video}
                     nextVideo={this.nextVideo}
                     prevVideo={this.prevVideo}
                     />
-                    <div className="Playlist Manager">
+                    <div className="Playlist Manager" data-testid="playlist-manager">
 {/* 
                         have a menu that selects playlists, but there must be default
                         choose between the lists */}
@@ -150,7 +150,7 @@ class Playlist extends React.Component {
                 )
             }
         else{
-            return (<div>
+            return (<div data-testid="playlist-content">
                 No Videos to choose from
             </div>)
         }
