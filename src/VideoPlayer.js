@@ -4,7 +4,7 @@ import './VideoPlayer.css' ;
 
 class LatestVideo extends React.Component{
     render(){ 
-        console.log('VidPlayer Props',this.props) ;
+        // console.log('VidPlayer Props',this.props) ;
         if (this.props.vidURL === undefined){
             return (<div>
                 Video Player
