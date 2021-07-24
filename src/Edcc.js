@@ -18,17 +18,17 @@ class EDCCNavBar extends React.Component{
     render(){
         return(
             <Router>
-                <div className="nav-container">
+                <div className="nav-container" data-testid="nav">
                     <img id="logo" src={`${this.url}/artist/edcc/logosquare.jpg`} alt="logo"/>
 
                     <div className="nav-list">
-                        <Link to="/">HOME</Link>
-                        <Link to="/about">About Us</Link>
-                        <Link to="/contact">Contact Us</Link>
+                        <Link to="/">HOME </Link>
+                        <Link to="/about">About Us </Link>
+                        <Link to="/contact">Contact Us </Link>
                     </div>
-                    <Link className="click-btn title" to="/add">+</Link>
+                    <Link className="click-btn title" to="/add">+ </Link>
                 </div>
-                <div className="content">
+                <div className="content" data-testid="content">
                 <Switch>
                     <Route path="/" exact component={Playlist}/>
                     <Route path="/contact" component={Contact}/>
@@ -36,7 +36,7 @@ class EDCCNavBar extends React.Component{
                     <Route path="/add" component={AddVideo}/>
                 </Switch>
                 </div>
-                <div id="footer">
+                <div id="footer" data-testid="footer">
                     <p id="slogan">
                         Empowering People To Impact The World
                     </p>
