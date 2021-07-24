@@ -8,8 +8,8 @@ import Playlist from './Playlist';
 class EDCCNavBar extends React.Component{
     constructor(props){
         super(props) ;
-        this.url = 'http://localhost:9009' ;
-        // this.url= 'https://nd1server1.herokuapp.com'
+        // this.url = 'http://localhost:9009' ;
+        this.url= 'https://nd1server1.herokuapp.com'
         // this.state = {
         //     videos:[]
         // }

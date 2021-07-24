@@ -17,8 +17,8 @@ class Playlist extends React.Component {
         }
     }
     getAllVideos= () =>{
-        // axios.get('https://nd1server1.herokuapp.com/edcc/videos')
-        axios.get('http://localhost:9009/edcc/videos')
+        axios.get('https://nd1server1.herokuapp.com/edcc/videos')
+        // axios.get('http://localhost:9009/edcc/videos')
         // .then(res=>res.json())
         .then((res)=>{
             console.log('Backend',res) ;
@@ -93,14 +93,14 @@ class Playlist extends React.Component {
     }
 
     prevVideo = () =>{
-        alert('pressed Prev') //debug  step
+        // alert('pressed Prev') //debug  step
         const curr = this.state.currVidIndex ;
         if (curr === 0 ){
             alert('No Previous Video, Watch next video or watch another playlist') ;
             //prompt for next video or playlist
         }
         else{
-            alert('moving to Prev video') ; 
+            // alert('moving to Prev video') ; 
             this.setState({
                 currVidIndex:this.state.currVidIndex-1
             }) ; 
@@ -134,7 +134,7 @@ class Playlist extends React.Component {
                         <p className="title" >
                             <span className="click-btn">&#9776;
                             </span> 
-                           Playlist:{'?'}
+                           EL-DABAR : THE WORD OF GOD
                         </p>
                         <div>
                         {this.state.vidsArray.length > 0 ?
