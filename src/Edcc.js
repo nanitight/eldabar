@@ -4,6 +4,8 @@ import About from './components/About';
 import Contact from './components/Contact';
 import AddVideo from './AddVideo' ;
 import './EDCC.css' ;
+import './css/global.css' ;
+
 import Playlist from './Playlist';
 class EDCCNavBar extends React.Component{
     constructor(props){

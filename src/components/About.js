@@ -1,5 +1,4 @@
 import React from  'react' ;
-import '../css/global.css'
 function About(){
     function openClose(){
         var btn = document.getElementById('more');
