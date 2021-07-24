@@ -1,7 +1,7 @@
 import React from 'react';
 import VideoPlayer from './VideoPlayer'
-import './Playlist.css'
-var title = "Living A Life Free From Demonic Oppression" ; 
+import './Playlist.css' ;
+import axios from 'axios' ;
 
 //The class for the playlist, it must atleast have one video. 
 class Playlist extends React.Component {
@@ -12,61 +12,71 @@ class Playlist extends React.Component {
         this.state = {
             currVidIndex : 0 ,
             vidsArray: [ // we are supposed to receive the videos details from user input. we will work on that ..
-            {   title:title ,
-                source: "https://www.facebook.com/plugins/video.php?height=415&href=https%3A%2F%2Fwww.facebook.com%2F137622389779783%2Fvideos%2F310221190308898%2F&show_text=true&width=560" ,
-                scroll:"no",
-                width:"560",
-                height:"530"} ,
-            //,next
-            {   title: "VideoPlayer",
-                source:"https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2F137622389779783%2Fvideos%2F1798424190305663%2F&show_text=false&width=560",
-                width:"560" ,
-                height:"560" ,
-                scrolling :"no" 
-            }
         ],
-            title: title,
             userName: 'PlaceHolder1' //props.userName
         }
     }
-    componentWillMount(){
-        alert('retriving old value') ;
-        let index = localStorage.getItem("CurrVidIndex") ;
-        if (!index===null){ //index is not equal to null
-            this.setState({
-                currVidIndex:index
-            })
-        }
+    getAllVideos= () =>{
+        axios.get('https://nd1server1.herokuapp.com/edcc/videos')
+        // axios.get('http://localhost:9009/edcc/videos')
+        // .then(res=>res.json())
+        .then((res)=>{
+            console.log('Backend',res) ;
+            const responseData = res.data ; 
+
+            if (responseData.data !== undefined){
+                this.setState({
+                    vidsArray:responseData.data
+                },()=>{console.log('updating state')}) ;
+            }
+        })
+        .catch(err=>console.log('Error in comms',err))
+
+    }
+    componentDidMount(){
+       this.getAllVideos() ;
+        // alert('retriving old value') ;
+        // let index = localStorage.getItem("CurrVidIndex") ;
+        // if (!index===null){ //index is not equal to null
+        //     this.setState({
+        //         currVidIndex:index
+        //     }) ;
+        // }
+        // else{
+        //     this.setState({
+        //         currVidIndex:0
+        //     }) ;
+        // }
     }
     componentWillUnmount(){
         // when app unmonts it must store the current index video. If the playlist has one vid, index is 0 , 
-        const index = localStorage.getItem("CurrVidIndex") ;
+    //     const index = localStorage.getItem("CurrVidIndex") ;
 
-        if (index=== null){ //there was no stored variable
-            localStorage.setItem("CurrVidIndex",this.state.currVidIndex) ; 
-        }
-        else{
-            if (parseInt(index) !==  this.state.currVidIndex){ //check if i went back in the viewes list ,or it changed
-                localStorage.setItem("CurrVidIndex",this.state.currVidIndex) ; 
-            }
-        }
+    //     if (index=== null){ //there was no stored variable
+    //         localStorage.setItem("CurrVidIndex",this.state.currVidIndex) ; 
+    //     }
+    //     else{
+    //         if (parseInt(index) !==  this.state.currVidIndex){ //check if i went back in the viewes list ,or it changed
+    //             localStorage.setItem("CurrVidIndex",this.state.currVidIndex) ; 
+    //         }
+    //     }
     }
 
-    componentDidUpdate(){
-        alert('update') ; //debug  step
-        if (0 < this.state.currVidIndex){ //check if i went back in the viewes list
-            localStorage.setItem("CurrVidIndex",this.state.currVidIndex) ; 
-        }
-    }
+    // componentDidUpdate(){
+    //     alert('update') ; //debug  step
+    //     if (0 < this.state.currVidIndex){ //check if i went back in the viewes list
+    //         localStorage.setItem("CurrVidIndex",this.state.currVidIndex) ; 
+    //     }
+    // }
 
     nextVideo =()=>{
-        alert('pressed NExt') //debug  step
+       // alert('pressed NExt') ; debug  step
         const curr = this.state.currVidIndex ; 
         if (curr === (this.state.vidsArray.length-1)){
             // if the end of the array has been reached
             let ans = window.confirm('End of Current playlist is reached, do you want to jump to the next Playlist?') ; 
             if (ans === true){
-                alert('Next PLAYLIST PLays Now') ; //debug  step
+                // alert('Next PLAYLIST PLays Now') ; //debug  step
             }
             else{
                 alert('start at first video') ;
@@ -83,36 +93,67 @@ class Playlist extends React.Component {
     }
 
     prevVideo = () =>{
-        alert('pressed Prev') //debug  step
+        // alert('pressed Prev') //debug  step
         const curr = this.state.currVidIndex ;
         if (curr === 0 ){
             alert('No Previous Video, Watch next video or watch another playlist') ;
             //prompt for next video or playlist
         }
         else{
-            alert('moving to Prev video') ; 
+            // alert('moving to Prev video') ; 
             this.setState({
                 currVidIndex:this.state.currVidIndex-1
             }) ; 
         }
     }
 
+    playSelectedVideo = (num)=>{
+        this.setState({
+            currVidIndex:num
+        }) ;
+    }
+
     render(){
+        const storedVids = this.state.vidsArray  ;
         // this.state.currVidIndex
-        const  video = this.state.vidsArray[this.state.currVidIndex]  ; //object that represents the video
-        return (
-            <div  id="bigContainer">
-                <VideoPlayer 
-                userName={this.state.userName} 
-                vidURL={video}
-                nextVideo={this.nextVideo}
-                prevVideo={this.prevVideo}
-                />
-            
-                <button onClick={this.prevVideo}>Previous Video</button>
-                <button onClick={this.nextVideo} >Next Video</button>
-            </div>
-            )
+        // playlist names ? -> map out from all
+        if (Array.isArray(storedVids) && this.state.currVidIndex >= 0){
+            var  video = storedVids[this.state.currVidIndex ] ; //object that represents the video
+            // console.log('video displayed',this.state) ;
+            return (
+                <div  id="bigContainer">
+                    <VideoPlayer 
+                    vidURL={video===undefined?{}:video}
+                    nextVideo={this.nextVideo}
+                    prevVideo={this.prevVideo}
+                    />
+                    <div className="Playlist Manager">
+{/* 
+                        have a menu that selects playlists, but there must be default
+                        choose between the lists */}
+                        <p className="title" >
+                            <span className="click-btn">&#9776;
+                            </span> 
+                           EL-DABAR : THE WORD OF GOD
+                        </p>
+                        <div>
+                        {this.state.vidsArray.length > 0 ?
+                        this.state.vidsArray.map((vid,index)=>{
+                            return <button className="click-btn" key={`k${index}`}
+                                onClick={()=>this.playSelectedVideo(index)}>
+                                    {vid.title}</button>
+                        }):
+                        <p>No Videos Selected</p>}
+                        </div>
+                </div>
+                </div>
+                )
+            }
+        else{
+            return (<div>
+                No Videos to choose from
+            </div>)
+        }
     }
 }
 

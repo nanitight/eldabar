@@ -1,21 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-// import EDCC from './Edcc' ;
+
+// import App from './App';
+import EDCC from './Edcc' ;
 // import Log from './login' ;
-import Play from './Playlist' ;
-// import NavBar from './Edcc' ;
 
 import reportWebVitals from './reportWebVitals';
 
 
 ReactDOM.render(
-  <React.StrictMode>
-     {/* <App /> */}
-    {/* <NavBar />  */}
-    <Play/>   
-  </React.StrictMode>,
+    <EDCC /> ,
   // el,
   
   document.getElementById('root')

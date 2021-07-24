@@ -1,19 +1,65 @@
-
-.welcome {
+.title {
     color: red ;
-    font-size: 30px;
+    font-size: 20px;
 }  
 
 
 #VideoPlayer {
-    width: 560px;
-    border: 12px double red ;
-    background-color: #001f5f ;
-    color:white;
+    /* display: flex; */
     padding: 5px ;
 }
 
-#points{
-    position: static;
+.vidContainer{
+    border: none;
 }
+
+@media(max-width:699px) { 
+    /*Small Screen
+    display as column box*/ 
+	.vidContainer{
+        min-width: 90vw;
+        max-width: 95vw;
+        max-height:90vw ;
+        min-height: 50vw;
+	}
+    #bigContainer{
+        flex-wrap: wrap;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+
+    }
+    #VideoPlayer {
+        width: 100vw;
+    }
+}
+@media(min-width:700px){
+    /*Bigger Screen*/
+	.vidContainer{	
+		background-color: rgba(120,200,225,0.3);
+		min-width: 50vw;
+        max-width: 70vw;
+        min-height: 200px;
+        max-height: 80vh;
+        /* overflow: auto; */
+	}
+    #bigContainer{
+        flex-wrap: nowrap;
+        align-items: stretch;
+        text-align: left;
+        flex-direction: row;
+    }
+}
+
+.click-btn:hover{
+    cursor: pointer;
+    background-color: #965b00;
+}
+.click-btn{
+    border-radius: 20px ;
+    background-color: rgba(150, 75, 0, 0.972);
+    color: black ;
+    font-size: medium;
+}
+
  
