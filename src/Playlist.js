@@ -23,11 +23,15 @@ class Playlist extends React.Component {
         .then((res)=>{
             console.log('Backend',res) ;
             const responseData = res.data ; 
+            // const responseData = res ; 
 
             if (responseData.data !== undefined){
                 this.setState({
                     vidsArray:responseData.data
                 },()=>{console.log('updating state')}) ;
+            }
+            else{
+                alert('no videos found') ;
             }
         })
         .catch(err=>console.log('Error in comms',err))
@@ -128,8 +132,11 @@ class Playlist extends React.Component {
                     prevVideo={this.prevVideo}
                     />
                     <div className="Playlist Manager" data-testid="playlist-manager">
-{/* 
-                        have a menu that selects playlists, but there must be default
+                    <div>
+                        <button className="click-btn" onClick={this.props.prevVideo}>Previous Video</button>
+                        <button className="click-btn" onClick={this.props.nextVideo} >Next Video</button>
+                    </div>
+                    {/*  have a menu that selects playlists, but there must be default
                         choose between the lists */}
                         <p className="title" >
                             <span className="click-btn">&#9776;

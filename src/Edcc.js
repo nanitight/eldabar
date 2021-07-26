@@ -1,5 +1,5 @@
 import React from  'react' ;
-import { BrowserRouter as Router,Route , Link, Switch} from 'react-router-dom' ;
+import { HashRouter,Route , Link, Switch} from 'react-router-dom' ;
 import About from './components/About';
 import Contact from './components/Contact';
 import AddVideo from './AddVideo' ;
@@ -19,7 +19,7 @@ class EDCCNavBar extends React.Component{
     
     render(){
         return(
-            <Router>
+            <HashRouter>
                 <div className="nav-container" data-testid="nav">
                     <img id="logo" src={`${this.url}/artist/edcc/logosquare.jpg`} alt="logo"/>
 
@@ -44,7 +44,7 @@ class EDCCNavBar extends React.Component{
                     </p>
                         Copyright 2019-2021
                 </div>
-            </Router>
+            </HashRouter>
         )
     }
 }
