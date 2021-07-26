@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/nanitight/eldabar/static/css/main.52dada0c.chunk.css",
+    "main.js": "/nanitight/eldabar/static/js/main.882d7052.chunk.js",
+    "main.js.map": "/nanitight/eldabar/static/js/main.882d7052.chunk.js.map",
+    "runtime-main.js": "/nanitight/eldabar/static/js/runtime-main.ad509041.js",
+    "runtime-main.js.map": "/nanitight/eldabar/static/js/runtime-main.ad509041.js.map",
+    "static/js/2.bc880e4b.chunk.js": "/nanitight/eldabar/static/js/2.bc880e4b.chunk.js",
+    "static/js/2.bc880e4b.chunk.js.map": "/nanitight/eldabar/static/js/2.bc880e4b.chunk.js.map",
+    "static/js/3.3d006201.chunk.js": "/nanitight/eldabar/static/js/3.3d006201.chunk.js",
+    "static/js/3.3d006201.chunk.js.map": "/nanitight/eldabar/static/js/3.3d006201.chunk.js.map",
+    "index.html": "/nanitight/eldabar/index.html",
+    "static/css/main.52dada0c.chunk.css.map": "/nanitight/eldabar/static/css/main.52dada0c.chunk.css.map",
+    "static/js/2.bc880e4b.chunk.js.LICENSE.txt": "/nanitight/eldabar/static/js/2.bc880e4b.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ad509041.js",
+    "static/js/2.bc880e4b.chunk.js",
+    "static/css/main.52dada0c.chunk.css",
+    "static/js/main.882d7052.chunk.js"
+  ]
+}
