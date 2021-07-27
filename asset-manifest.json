@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/eldabar/static/css/main.52dada0c.chunk.css",
-    "main.js": "/eldabar/static/js/main.882d7052.chunk.js",
-    "main.js.map": "/eldabar/static/js/main.882d7052.chunk.js.map",
+    "main.css": "/eldabar/static/css/main.1803e0ad.chunk.css",
+    "main.js": "/eldabar/static/js/main.03954240.chunk.js",
+    "main.js.map": "/eldabar/static/js/main.03954240.chunk.js.map",
     "runtime-main.js": "/eldabar/static/js/runtime-main.0f834eba.js",
     "runtime-main.js.map": "/eldabar/static/js/runtime-main.0f834eba.js.map",
     "static/js/2.bc880e4b.chunk.js": "/eldabar/static/js/2.bc880e4b.chunk.js",
@@ -10,13 +10,13 @@
     "static/js/3.3d006201.chunk.js": "/eldabar/static/js/3.3d006201.chunk.js",
     "static/js/3.3d006201.chunk.js.map": "/eldabar/static/js/3.3d006201.chunk.js.map",
     "index.html": "/eldabar/index.html",
-    "static/css/main.52dada0c.chunk.css.map": "/eldabar/static/css/main.52dada0c.chunk.css.map",
+    "static/css/main.1803e0ad.chunk.css.map": "/eldabar/static/css/main.1803e0ad.chunk.css.map",
     "static/js/2.bc880e4b.chunk.js.LICENSE.txt": "/eldabar/static/js/2.bc880e4b.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.0f834eba.js",
     "static/js/2.bc880e4b.chunk.js",
-    "static/css/main.52dada0c.chunk.css",
-    "static/js/main.882d7052.chunk.js"
+    "static/css/main.1803e0ad.chunk.css",
+    "static/js/main.03954240.chunk.js"
   ]
 }
