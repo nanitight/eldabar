@@ -21,14 +21,15 @@ class EDCCNavBar extends React.Component{
         return(
             <HashRouter>
                 <div className="nav-container" data-testid="nav">
-                    <img id="logo" src={`${this.url}/artist/edcc/logosquare.jpg`} alt="logo"/>
+                    <Link className="click-btn title" to="/add"> 
+                        <img id="logo" src={`${this.url}/artist/edcc/logosquare.jpg`} alt="logo"/>
+                    </Link>
 
                     <div className="nav-list">
                         <Link to="/">HOME </Link>
                         <Link to="/about">About Us </Link>
                         <Link to="/contact">Contact Us </Link>
                     </div>
-                    <Link className="click-btn title" to="/add">+ </Link>
                 </div>
                 <div className="content" data-testid="content">
                 <Switch>

@@ -133,8 +133,8 @@ class Playlist extends React.Component {
                     />
                     <div className="Playlist Manager" data-testid="playlist-manager">
                     <div>
-                        <button className="click-btn" onClick={this.props.prevVideo}>Previous Video</button>
-                        <button className="click-btn" onClick={this.props.nextVideo} >Next Video</button>
+                        <button className="click-btn" onClick={this.prevVideo}>Previous Video</button>
+                        <button className="click-btn" onClick={this.nextVideo} >Next Video</button>
                     </div>
                     {/*  have a menu that selects playlists, but there must be default
                         choose between the lists */}

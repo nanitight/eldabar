@@ -7,8 +7,8 @@
 } */
 
 #root{
-	width: 100vw;
-	height: 100vh;
+	width: 100%;
+	height: 100%;
 }
 .nav-container{
 	background-color: aliceblue;
@@ -25,9 +25,6 @@
     height: 10vh;
 } 
 
-
-
-
 .nav-list{
     width: 60vw;
 	display: inline-flex;
@@ -36,7 +33,13 @@
 }
 
 .nav-list a{
-    text-decoration : none ;
+    text-decoration : none ; 
+	border-radius: 2px ;	
+	background-color: rgba(120,200,225,0.09);
+
+    color: darkgreen ;
+    font-size: medium;
+	padding: 3px;
 }
 
 .nav-list a:hover{
@@ -64,7 +67,6 @@
 	font-family: Georgia ,fantasy ,Arial;
 	font-size: 30px;
 }
-
 /* =================================FOOTER================================= */
 
 

@@ -4,3 +4,20 @@
     font-size: 30px;
     text-decoration: none;
 }
+
+.click-btn:hover{
+    cursor: pointer;
+    background-color: #461000;
+}
+.click-btn{
+    border-radius: 20px ;
+    background-color: rgba(150, 75, 0, 0.972);
+    color: white ;
+    font-size: medium;
+}
+
+ 
+
+.header-link a{
+ border-radius: 3px;
+}

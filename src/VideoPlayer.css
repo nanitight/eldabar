@@ -3,6 +3,12 @@
     font-size: 20px;
 }  
 
+.Playlist {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+}
 
 #VideoPlayer {
     /* display: flex; */
@@ -13,35 +19,33 @@
     border: none;
 }
 
-@media(max-width:699px) { 
+@media(max-width:599px) { 
     /*Small Screen
     display as column box*/ 
 	.vidContainer{
         min-width: 90vw;
         max-width: 95vw;
-        max-height:90vw ;
-        min-height: 50vw;
+        max-height:40vh ;
+        min-height: 90vw;/* to make it square*/
 	}
     #bigContainer{
         flex-wrap: wrap;
         flex-direction: column;
         text-align: center;
         align-items: center;
-
+        min-width: 100vw;
     }
     #VideoPlayer {
         width: 100vw;
     }
 }
-@media(min-width:700px){
-    /*Bigger Screen*/
+ @media(min-width:599px){
+    /*  Bigger Screen */
 	.vidContainer{	
-		background-color: rgba(120,200,225,0.3);
 		min-width: 50vw;
         max-width: 70vw;
-        min-height: 200px;
+        min-height:40vw;
         max-height: 80vh;
-        /* overflow: auto; */
 	}
     #bigContainer{
         flex-wrap: nowrap;
@@ -49,17 +53,5 @@
         text-align: left;
         flex-direction: row;
     }
-}
+} 
 
-.click-btn:hover{
-    cursor: pointer;
-    background-color: #965b00;
-}
-.click-btn{
-    border-radius: 20px ;
-    background-color: rgba(150, 75, 0, 0.972);
-    color: white ;
-    font-size: medium;
-}
-
- 
