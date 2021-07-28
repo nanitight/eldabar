@@ -10,8 +10,8 @@ import Playlist from './Playlist';
 class EDCCNavBar extends React.Component{
     constructor(props){
         super(props) ;
-        // this.url = 'http://localhost:9009' ;
-        this.url= 'https://nd1server1.herokuapp.com'
+        this.url = 'http://localhost:9009' ;
+        // this.url= 'https://nd1server1.herokuapp.com'
         // this.state = {
         //     videos:[]
         // }
@@ -33,7 +33,9 @@ class EDCCNavBar extends React.Component{
                 </div>
                 <div className="content" data-testid="content">
                 <Switch>
-                    <Route path="/" exact component={Playlist}/>
+                    <Route path="/" exact >
+                        <Playlist url={this.url}/>
+                    </Route>
                     <Route path="/contact" component={Contact}/>
                     <Route path="/about" component={About} />
                     <Route path="/add" component={AddVideo}/>

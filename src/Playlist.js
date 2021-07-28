@@ -11,24 +11,27 @@ class Playlist extends React.Component {
         super(props) ;
         this.state = {
             currVidIndex : 0 ,
-            vidsArray: [ // we are supposed to receive the videos details from user input. we will work on that ..
-        ],
-            userName: 'PlaceHolder1' //props.userName
+            allVideos:[],
+            vidsArray: [], // we are supposed to receive the videos details from user input. we will work on that ..
+            playlistList:['EL-DABAR : THE WORD OF GOD'],
+            selectedPlaylist:'EL-DABAR : THE WORD OF GOD'
         }
     }
     getAllVideos= () =>{
-        axios.get('https://nd1server1.herokuapp.com/edcc/videos')
+        // axios.get('https://nd1server1.herokuapp.com/edcc/videos')
         // axios.get('http://localhost:9009/edcc/videos')
         // .then(res=>res.json())
+        axios.get(`${this.props.url}/edcc/videos`)
         .then((res)=>{
-            console.log('Backend',res) ;
+            // console.log('Backend',res) ;
             const responseData = res.data ; 
             // const responseData = res ; 
 
             if (responseData.data !== undefined){
                 this.setState({
-                    vidsArray:responseData.data
-                },()=>{console.log('updating state')}) ;
+                    vidsArray:responseData.data,
+                    allVideos:responseData.data
+                }) ;
             }
             else{
                 alert('no videos found') ;
@@ -39,6 +42,7 @@ class Playlist extends React.Component {
     }
     componentDidMount(){
        this.getAllVideos() ;
+       this.getPlaylistForAllVideos()
         // alert('retriving old value') ;
         // let index = localStorage.getItem("CurrVidIndex") ;
         // if (!index===null){ //index is not equal to null
@@ -80,10 +84,29 @@ class Playlist extends React.Component {
             // if the end of the array has been reached
             let ans = window.confirm('End of Current playlist is reached, do you want to jump to the next Playlist?') ; 
             if (ans === true){
-                // alert('Next PLAYLIST PLays Now') ; //debug  step
+               // alert('Next PLAYLIST PLays Now') ; //debug  step
+                //change playlist
+                const list = this.state.playlistList ;
+                if (list.length>1){
+                    var index =list.indexOf(this.state.selectedPlaylist) ; 
+                    if (index>-1){
+                        // list in item choose another
+                        if (index+1>=list.length){
+                            //boundary riched
+                            index = 0 ; 
+                        }
+                        else{
+                            index = index+1 ;
+                        }
+                    }
+                    else{
+                        index = 0 ; //no selected playlist
+                    }
+                    this.filterPlayListVideos(list[index]) ;
+                }
             }
             else{
-                alert('start at first video') ;
+                alert('Starting at first video') ;
                 this.setState({
                     currVidIndex: 0 
                 }); 
@@ -117,6 +140,40 @@ class Playlist extends React.Component {
         }) ;
     }
 
+    getPlaylistForAllVideos = ()=>{
+        axios.get(`${this.props.url}/edcc/playlist`)
+        .then((res)=>{
+            const result = res.data ;
+            if (result.data !== undefined){
+                this.setState({
+                    playlistList:result.data
+                }) ;
+            }
+        })
+        .catch((err)=>{
+            
+            console.log('Error when fetching playlist',err) ;
+            this.setState({
+                playlistList:['EL-DABAR : THE WORD OF GOD']
+            })
+        })
+    }
+
+    handleSelect = (event)=>{
+        // console.log('select changing')
+        this.setState({
+            [event.target.name]:event.target.value
+        },()=>this.filterPlayListVideos(this.state.selectedPlaylist)) ;
+    }
+
+    filterPlayListVideos = (playlist) =>{
+        var result = this.state.allVideos.filter(value => value.playlist === playlist) ;
+        this.setState({
+            vidsArray:result ,
+            currVidIndex:0, 
+            selectedPlaylist:playlist
+        }) ;
+    }
     render(){
         const storedVids = this.state.vidsArray  ;
         // this.state.currVidIndex
@@ -138,11 +195,24 @@ class Playlist extends React.Component {
                     </div>
                     {/*  have a menu that selects playlists, but there must be default
                         choose between the lists */}
-                        <p className="title" >
+                        <div>
                             <span className="click-btn">&#9776;
                             </span> 
-                           EL-DABAR : THE WORD OF GOD
-                        </p>
+                            <select onChange={this.handleSelect} value={this.state.selectedPlaylist} name="selectedPlaylist">
+                                {
+                                    this.state.playlistList.map((v)=>{
+                                      return  <option>
+                                            {
+                                                v
+                                            }
+                                        </option>
+                                    })
+                                }   
+                            </select>
+                           <p className="title"  testid="playlistname">
+                           {this.state.selectedPlaylist}
+                            </p>
+                        </div>
                         <div>
                         {this.state.vidsArray.length > 0 ?
                         this.state.vidsArray.map((vid,index)=>{
