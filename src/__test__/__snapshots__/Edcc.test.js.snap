@@ -6,40 +6,39 @@ Array [
     className="nav-container"
     data-testid="nav"
   >
-    <img
-      alt="logo"
-      id="logo"
-      src="https://nd1server1.herokuapp.com/artist/edcc/logosquare.jpg"
-    />
+    <a
+      className="click-btn title"
+      href="#/add"
+      onClick={[Function]}
+    >
+      <img
+        alt="logo"
+        id="logo"
+        src="http://localhost:9009/artist/edcc/logosquare.jpg"
+      />
+    </a>
     <div
       className="nav-list"
     >
       <a
-        href="/"
+        href="#/"
         onClick={[Function]}
       >
         HOME 
       </a>
       <a
-        href="/about"
+        href="#/about"
         onClick={[Function]}
       >
         About Us 
       </a>
       <a
-        href="/contact"
+        href="#/contact"
         onClick={[Function]}
       >
         Contact Us 
       </a>
     </div>
-    <a
-      className="click-btn title"
-      href="/add"
-      onClick={[Function]}
-    >
-      + 
-    </a>
   </div>,
   <div
     className="content"
@@ -64,6 +63,11 @@ Array [
           src=""
           title="EL-Dabar : The Word Of God"
         />
+      </div>
+      <div
+        className="Playlist Manager"
+        data-testid="playlist-manager"
+      >
         <div>
           <button
             className="click-btn"
@@ -78,21 +82,28 @@ Array [
             Next Video
           </button>
         </div>
-      </div>
-      <div
-        className="Playlist Manager"
-        data-testid="playlist-manager"
-      >
-        <p
-          className="title"
-        >
+        <div>
           <span
             className="click-btn"
           >
             ☰
           </span>
-          EL-DABAR : THE WORD OF GOD
-        </p>
+          <select
+            name="selectedPlaylist"
+            onChange={[Function]}
+            value="EL-DABAR : THE WORD OF GOD"
+          >
+            <option>
+              EL-DABAR : THE WORD OF GOD
+            </option>
+          </select>
+          <p
+            className="title"
+            testid="playlistname"
+          >
+            EL-DABAR : THE WORD OF GOD
+          </p>
+        </div>
         <div>
           <p>
             No Videos Selected

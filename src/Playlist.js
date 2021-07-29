@@ -149,6 +149,9 @@ class Playlist extends React.Component {
                     playlistList:result.data
                 }) ;
             }
+            else{
+                this.filterPlayListVideos('EL-DABAR : THE WORD OF GOD');
+            }
         })
         .catch((err)=>{
             this.filterPlayListVideos('EL-DABAR : THE WORD OF GOD');
