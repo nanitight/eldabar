@@ -151,11 +151,9 @@ class Playlist extends React.Component {
             }
         })
         .catch((err)=>{
-            
+            this.filterPlayListVideos('EL-DABAR : THE WORD OF GOD');
             console.log('Error when fetching playlist',err) ;
-            this.setState({
-                playlistList:['EL-DABAR : THE WORD OF GOD']
-            })
+            
         })
     }
 
