@@ -1,62 +1,36 @@
 import './App.css';
 import React from 'react';
-import { BrowserRouter as Router,Route , Link, Switch} from 'react-router-dom' ;
+import { HashRouter as Router,Route , Switch} from 'react-router-dom' ;
+import EDCC from './components/pages/Edcc'
+import About from './components/pages/About';
+import Contact from './components/pages/Contact';
+import Navbar from './components/inc/Navbar';
+import Footer from './components/inc/Footer';
 
-const Home = () => (
-  <div>
-      <h1> Welcome to EL Dabar City Church</h1>
-      <Link to="/about">ABOUT</Link> <br/>
-      <Link to="/contact">Contact US</Link>
-  </div>
-)
-
-const About = () =>(
-  <div>
-      <h1> About </h1>
-      <Link to="/">go to Home </Link>
-  </div>
-)
-
-const Contact = () => (
-  <div>
-    <p> Contact US @ 0123456789</p>
-    <Link to="/">go to Home</Link>
-  </div>
-)
+import {ThemeConfig, writeDarkSwitch} from 'bootstrap-darkmode';
+const themeConfig = new ThemeConfig() ;
+themeConfig.initTheme() ;
 
 class App extends React.Component {
   render(){
     return (
-      <Router>
-        <Switch>
-        <Route path="/about" 
-        render={ renderProps => (
-          <div>
-            <Link to="/about/ari">Ari</Link> 
-            <br/>
-            <Link to="/about/nate">Nate</Link>
-            <br/>
-            <Route path="/about/:name"
-              render= {renderProps => (
-                <div>
-                  <About name={renderProps.match.params.name} />
-                  <Link to="/">Go Home</Link>
-                </div>
-              )} />
-          </div>
-        )}/>
+      // <div className='bootstrap-dark'>
 
-          <Route path="/" render ={renderProps=>(
-            <div>
-              Home is underneath
-              <Home {...this.props} {...renderProps} />
-              <Link to="/about" >About</Link>
-            </div>
-          )} />
-          {/* <Route path="/contact" component = {Contact}/>  */}
+
+        <Router>
+          <Navbar/>
+          <Switch>
+            <Route path="/contact" component={Contact}/>
+            <Route path="/about" component={About} />
+            <Route path={"/"} component={EDCC}/>
           </Switch>
-      </Router>
+          <Footer/>
+        </Router>
+      // </div>
+
     )
+    
+    
   }
 }
 

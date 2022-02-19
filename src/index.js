@@ -1,20 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+// import './index.css';
 
-// import App from './App';
-import EDCC from './Edcc' ;
-// import Log from './login' ;
-
+// import EDCC from './Edcc' ;
+import App from './App' ;
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import 'bootstrap-icons/font/bootstrap-icons.css' ;
 import reportWebVitals from './reportWebVitals';
 
-
 ReactDOM.render(
-    <EDCC /> ,
-  // el,
+    <App /> ,
   
   document.getElementById('root')
 );
+
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

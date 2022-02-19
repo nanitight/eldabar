@@ -1,6 +1,6 @@
 import React from 'react';
 import VideoPlayer from './VideoPlayer'
-import './Playlist.css' ;
+// import './Playlist.css' ;
 import axios from 'axios' ;
 
 //The class for the playlist, it must atleast have one video. 
@@ -181,7 +181,7 @@ class Playlist extends React.Component {
         // playlist names ? -> map out from all
         if (Array.isArray(storedVids) && this.state.currVidIndex >= 0){
             var  video = storedVids[this.state.currVidIndex ] ; //object that represents the video
-            // console.log('video displayed',this.state) ;
+            console.log('video displayed',this.state) ;
             return (
                 <div  id="bigContainer" data-testid="playlist-content">
                     <VideoPlayer 
