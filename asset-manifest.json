@@ -1,22 +1,32 @@
 {
   "files": {
-    "main.css": "/eldabar/static/css/main.1803e0ad.chunk.css",
-    "main.js": "/eldabar/static/js/main.83a28637.chunk.js",
-    "main.js.map": "/eldabar/static/js/main.83a28637.chunk.js.map",
-    "runtime-main.js": "/eldabar/static/js/runtime-main.0f834eba.js",
-    "runtime-main.js.map": "/eldabar/static/js/runtime-main.0f834eba.js.map",
-    "static/js/2.bfecef7b.chunk.js": "/eldabar/static/js/2.bfecef7b.chunk.js",
-    "static/js/2.bfecef7b.chunk.js.map": "/eldabar/static/js/2.bfecef7b.chunk.js.map",
-    "static/js/3.3d006201.chunk.js": "/eldabar/static/js/3.3d006201.chunk.js",
-    "static/js/3.3d006201.chunk.js.map": "/eldabar/static/js/3.3d006201.chunk.js.map",
+    "main.css": "/eldabar/static/css/main.af1f842e.chunk.css",
+    "main.js": "/eldabar/static/js/main.7aeb1382.chunk.js",
+    "main.js.map": "/eldabar/static/js/main.7aeb1382.chunk.js.map",
+    "runtime-main.js": "/eldabar/static/js/runtime-main.fa6b301c.js",
+    "runtime-main.js.map": "/eldabar/static/js/runtime-main.fa6b301c.js.map",
+    "static/css/2.096b9a1a.chunk.css": "/eldabar/static/css/2.096b9a1a.chunk.css",
+    "static/js/2.2c9c111a.chunk.js": "/eldabar/static/js/2.2c9c111a.chunk.js",
+    "static/js/2.2c9c111a.chunk.js.map": "/eldabar/static/js/2.2c9c111a.chunk.js.map",
+    "static/js/3.4c670665.chunk.js": "/eldabar/static/js/3.4c670665.chunk.js",
+    "static/js/3.4c670665.chunk.js.map": "/eldabar/static/js/3.4c670665.chunk.js.map",
     "index.html": "/eldabar/index.html",
-    "static/css/main.1803e0ad.chunk.css.map": "/eldabar/static/css/main.1803e0ad.chunk.css.map",
-    "static/js/2.bfecef7b.chunk.js.LICENSE.txt": "/eldabar/static/js/2.bfecef7b.chunk.js.LICENSE.txt"
+    "static/css/2.096b9a1a.chunk.css.map": "/eldabar/static/css/2.096b9a1a.chunk.css.map",
+    "static/css/main.af1f842e.chunk.css.map": "/eldabar/static/css/main.af1f842e.chunk.css.map",
+    "static/js/2.2c9c111a.chunk.js.LICENSE.txt": "/eldabar/static/js/2.2c9c111a.chunk.js.LICENSE.txt",
+    "static/media/EDCC Poster 1.d43bb9c5.png": "/eldabar/static/media/EDCC Poster 1.d43bb9c5.png",
+    "static/media/EDCC Poster 2.b71aace5.jpg": "/eldabar/static/media/EDCC Poster 2.b71aace5.jpg",
+    "static/media/TJProf.8dc7dc2d.jpeg": "/eldabar/static/media/TJProf.8dc7dc2d.jpeg",
+    "static/media/TJProheticProf.eaf25383.jpeg": "/eldabar/static/media/TJProheticProf.eaf25383.jpeg",
+    "static/media/WLogo.79b97307.jpeg": "/eldabar/static/media/WLogo.79b97307.jpeg",
+    "static/media/bootstrap-icons.css": "/eldabar/static/media/bootstrap-icons.c1d7432e.woff",
+    "static/media/scripture.43cba324.jpg": "/eldabar/static/media/scripture.43cba324.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.0f834eba.js",
-    "static/js/2.bfecef7b.chunk.js",
-    "static/css/main.1803e0ad.chunk.css",
-    "static/js/main.83a28637.chunk.js"
+    "static/js/runtime-main.fa6b301c.js",
+    "static/css/2.096b9a1a.chunk.css",
+    "static/js/2.2c9c111a.chunk.js",
+    "static/css/main.af1f842e.chunk.css",
+    "static/js/main.7aeb1382.chunk.js"
   ]
 }
