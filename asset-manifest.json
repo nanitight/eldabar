@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/eldabar/static/css/main.af1f842e.chunk.css",
-    "main.js": "/eldabar/static/js/main.59758c1e.chunk.js",
-    "main.js.map": "/eldabar/static/js/main.59758c1e.chunk.js.map",
+    "main.js": "/eldabar/static/js/main.1ba9579f.chunk.js",
+    "main.js.map": "/eldabar/static/js/main.1ba9579f.chunk.js.map",
     "runtime-main.js": "/eldabar/static/js/runtime-main.a6ef21e9.js",
     "runtime-main.js.map": "/eldabar/static/js/runtime-main.a6ef21e9.js.map",
     "static/css/2.096b9a1a.chunk.css": "/eldabar/static/css/2.096b9a1a.chunk.css",
@@ -27,6 +27,6 @@
     "static/css/2.096b9a1a.chunk.css",
     "static/js/2.2b2d5ac9.chunk.js",
     "static/css/main.af1f842e.chunk.css",
-    "static/js/main.59758c1e.chunk.js"
+    "static/js/main.1ba9579f.chunk.js"
   ]
 }
