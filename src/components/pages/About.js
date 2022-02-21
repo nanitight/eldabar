@@ -25,7 +25,7 @@ function About(){
                         <b>Vision:</b> Setting the captives free and instructing the freed for life of liberty and abundance in Christ Jesus
                     </p>
 
-                    <p class="v2">
+                    <p className="v2">
                         <b>Values:</b>
                         <ul className='list-group'>
                             <li className='list-group-item'>

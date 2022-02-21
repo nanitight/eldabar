@@ -6,6 +6,7 @@ import About from './components/pages/About';
 import Contact from './components/pages/Contact';
 import Navbar from './components/inc/Navbar';
 import Footer from './components/inc/Footer';
+import ScrollToTopOnMount from './components/inc/Scroll';
 
 import {ThemeConfig, writeDarkSwitch} from 'bootstrap-darkmode';
 const themeConfig = new ThemeConfig() ;
@@ -14,10 +15,11 @@ themeConfig.initTheme() ;
 class App extends React.Component {
   render(){
     return (
-      // <div className='bootstrap-dark'>
+      // <div className='bg-secondary bg-gradient bg-opacity-10'>
 
 
         <Router>
+          <ScrollToTopOnMount />
           <Navbar/>
           <Switch>
             <Route path="/contact" component={Contact}/>
@@ -26,7 +28,7 @@ class App extends React.Component {
           </Switch>
           <Footer/>
         </Router>
-      // </div>
+      //  </div>
 
     )
     

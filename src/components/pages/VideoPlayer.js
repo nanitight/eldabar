@@ -7,7 +7,7 @@ class LatestVideo extends React.Component{
         // console.log('VidPlayer Props',this.props) ;
         if (this.props.vidURL === undefined){
             return (<div>
-                <p className="sticky-sm-top"> Video Player</p> 
+                <h5 className="sticky-sm-top"> Video Player</h5> 
             </div>)
         }
         // const vidHeight = this.props.vidURL.height === undefined ? '560':this.props.vidURL.height  ;
@@ -15,19 +15,20 @@ class LatestVideo extends React.Component{
         const vidSource = this.props.vidURL.source === undefined ? '':this.props.vidURL.source ;
         const vidTitle = this.props.vidURL.title === undefined ? 'EL-Dabar : The Word Of God' :this.props.vidURL.title ;
         return ( 
-            <div id="VideoPlayer" >
+            <div id="card shadow" >
 
-                <p className="sticky-sm-top">{vidTitle}</p> 
+                <h5 className="sticky-sm-top card-title"> {vidTitle}</h5> 
 
-                <div id="vidContainer" className='ratio ratio-4x3'>
-
-                <iframe className="vidContainer"
+                <div id="vidContainer" className='ratio ratio-4x3 card-body'>
+ 
+                <iframe className="ratio "
                 title={vidTitle}
                 src={vidSource} 
-                width="500" height="316"  
+                width="560" height="316"  
+                style={{border:'none',overflow:'hidden'}}
                 allowFullScreen={true} allow="clipboard-write; encrypted-media; picture-in-picture; web-share" 
                 />      
-                </div>
+               </div>
         </div> )
     }
 }

@@ -35,4 +35,4 @@ function ImageSlider(){
     )
 }
 
-export default ImageSlider;
+export default ImageSlider; 

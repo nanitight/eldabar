@@ -68,7 +68,7 @@ function Footer(){
                             <Link to={'/contact'} className='text-decoration-none' >Contact</Link>
 
                             </div>
-                            <div><Link to={'/contact'} className='text-decoration-none' >Videos</Link></div>
+                            <div><Link to={'//fvideos'} className='text-decoration-none' >Videos</Link></div>
                         </div>
                         <p>
                         Empowering People To Impact The World</p>
@@ -86,7 +86,7 @@ function Footer(){
 
                                    </td>
                                    <td>
-                                    079 722 2002
+                                   &nbsp; 065 848 3510
 
                                     </td>
                                </tr>

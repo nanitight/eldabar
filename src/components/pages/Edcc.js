@@ -7,7 +7,6 @@ import logo from '../images/WLogo.jpeg'
 import '../../css/global.css' ;
 
 import Playlist from './Playlist';
-import FacebookLoginExt from './FacebookLoginExt';
 import FacebookVideoList from './FacebookVideoList';
 class EDCC extends React.Component{
     constructor(props){
@@ -23,7 +22,7 @@ class EDCC extends React.Component{
         const {path, url} = this.props.match ;
         console.log('EDCC props',this.props) ;
         return(<>
-            <div>
+            <div className='bg-secondary bg-gradient bg-opacity-10'>
                 <ImageSlider />
                 <Switch>
                 <Route path={`${path}/fvideos`} >

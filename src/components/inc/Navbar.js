@@ -5,7 +5,8 @@ import logo from '../images/WLogo.jpeg'
 
 function Navbar() {
     return (
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <nav className="navbar navbar-expand-lg navbar-light bg-light bg-gradient bg-opacity-25">
+
             <div className="container-fluid position-relative " >
                 <Link className="navbar-brand " to={'/'}>
                 <img src={logo} alt='logo' style={{maxWidth:'60px'}} className="d-inline"/> 
